@@ -1,7 +1,37 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    |	<meta charset="utf-8" />
+    |	<title>Homework 5, CSC 305 Database Design, Fall 2022</title>
+    |	<style>
+    |		/* Indicate required elements */
+    |		.flag { color: firebrick; }
+    |
+    |		/* The required flag starts out as a red asterisk. */
+    |		.flag::before {
+    |			content: "*";
+    |			padding-left: 2px;
+    |		}
+    |
+    |		/* Change the red * to a green check once the control has been filled in.  
+    |   			The ~ is for selecting siblings without requiring that they be right 
+    |   			next to each other. */
+    |		:required:valid ~ .flag::before, .flag.valid::before {
+    |			content: '✓';
+    |			color: green;
+    |		}
+    |
+    |		.graduation > input { margin-left: 2em;	}
+    |
+    |		ul {
+    |			list-style-type: none;
+    |            margin-top: 0;
+    |		}
+    |
+    |        div { margin-bottom: 0.5em; }
+    |
+    |		.explanations { padding: 0; }
+    |	</style>
+    |
   body
     block content
